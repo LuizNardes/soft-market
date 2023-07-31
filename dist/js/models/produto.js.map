@@ -1,0 +1,1 @@
+{"version":3,"file":"produto.js","sourceRoot":"","sources":["../../../src/ts/models/produto.ts"],"names":[],"mappings":"AAAA,MAAM,OAAO,OAAO;IAChB,YACoB,aAAoB,EACpB,IAAW,EACX,SAAgB,EAChB,KAAY,EACZ,OAAc,EACd,IAAW;QALX,kBAAa,GAAb,aAAa,CAAO;QACpB,SAAI,GAAJ,IAAI,CAAO;QACX,cAAS,GAAT,SAAS,CAAO;QAChB,UAAK,GAAL,KAAK,CAAO;QACZ,YAAO,GAAP,OAAO,CAAO;QACd,SAAI,GAAJ,IAAI,CAAO;IAC7B,CAAC;CACN"}

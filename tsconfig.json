@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+      "outDir": "dist/js",
+      "target": "ES6",
+      "noEmitOnError": true,
+      "noImplicitAny": true,
+      "removeComments": true,
+      "strictNullChecks": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "baseUrl": ".",
+  },
+  "types": [
+    "jquery"
+  ],
+  "typeRoots": [
+    "node_modules/@types",
+  ],
+  "include": ["src/**/*"]
+}
+
+
+
