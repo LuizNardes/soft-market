@@ -9,19 +9,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { deleteDados } from "../services/deleteDados.js";
 import { View } from "./view.js";
-export class AdmProdutosView extends View {
+export class AdmCategoriasView extends View {
     template(model) {
-        return `${model.lista().map(produto => {
+        return `${model.lista().map(categoria => {
             return `
                         <tr>
                             <th class="align-middle" scope="row"><img src="https://picsum.photos/100"></th>
-                            <td class="align-middle">${produto.CodigoProduto}</td>
-                            <td class="align-middle">${produto.Nome}</td>
-                            <td class="align-middle">${produto.Categoria}</td>
-                            <td class="align-middle">R$ ${produto.Valor}</td>
-                            <td class="align-middle">${produto.Imposto}%</td>
-                            <td class="align-middle">R$ ${produto.Valor * (produto.Imposto / 100)}</td>
-                            <td class="align-middle"><i data-produto="${produto.CodigoProduto}" class="fa-regular fa-trash-can text-danger" style="cursor:pointer"></i></td>
+                            <td class="align-middle">${categoria.Codigo}</td>
+                            <td class="align-middle">${categoria.Categoria}</td>
+                            <td class="align-middle">${categoria.Imposto}%</td>
+                            <td class="align-middle"><i data-categoria="${categoria.Codigo}" class="fa-regular fa-trash-can text-danger" style="cursor:pointer"></i></td>
                         </tr>
                     `;
         }).join('')}`;
@@ -31,11 +28,15 @@ export class AdmProdutosView extends View {
         iconesDelete.forEach((icone) => {
             icone.addEventListener('click', () => __awaiter(this, void 0, void 0, function* () {
                 try {
-                    const codigo = icone.getAttribute('data-produto');
+                    const codigo = icone.getAttribute('data-categoria');
                     const Deletador = new deleteDados();
-                    const linhaAfetada = yield Deletador.delete('DeleteProduto', codigo);
+                    const linhaAfetada = yield Deletador.delete('DeleteCategoria', codigo);
                     if (linhaAfetada != true) {
-                        alert('Erro. Produto não exluido');
+                        const celula = icone.parentNode;
+                        celula.innerHTML = 'Essa Categoria ainda tem Produtos vinculados a ela';
+                        setInterval(() => {
+                            celula.innerHTML = '<i data-produto="${categoria.Codigo}" class="fa-regular fa-trash-can text-danger" style="cursor:pointer"></i>';
+                        }, 5000);
                         return;
                     }
                     const tableRow = icone.closest('tr');
@@ -48,4 +49,4 @@ export class AdmProdutosView extends View {
         });
     }
 }
-//# sourceMappingURL=adm-produtos-view.js.map
+//# sourceMappingURL=adm-categorias-view%20copy.js.map

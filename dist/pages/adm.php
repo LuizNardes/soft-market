@@ -29,6 +29,7 @@
                                             <th scope="col">Valor</th>
                                             <th scope="col">Imposto</th>
                                             <th scope="col">Valor Imposto</th>
+                                            <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody id="ListaDeProdutosADM">
@@ -43,16 +44,17 @@
                     <div class="card border-0">
                         <div class="card-body">
                             <div class="card-title d-flex justify-content-end">
-                                <button class="btn btn-outline-success">Nova Categoria <i class="fa-solid fa-circle-plus"></i></button>
+                                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#ModalAddCategoria">Nova Categoria <i class="fa-solid fa-circle-plus"></i></button>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col"></th>
-                                            <th scope="col">Código</th>
-                                            <th scope="col">Categoria</th>
-                                            <th scope="col">Imposto</th>
+                                            <th class="col-2" scope="col"></th>
+                                            <th class="col-2" scope="col">Código</th>
+                                            <th class="col-3" scope="col">Categoria</th>
+                                            <th class="col-2" scope="col">Imposto</th>
+                                            <th class="col-3" scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody id="ListaDeCategoriasADM">
@@ -69,7 +71,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal ADD PRODUTO -->
 <div class="modal fade" id="ModalAddProduto" tabindex="-1" aria-labelledby="ModalAddProdutoLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -91,7 +93,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="valorProduto" placeholder="10" required>
+                                <input type="number" class="form-control" id="valorProduto" placeholder="10"  min=0 required>
                                 <label for="valorProduto">Valor Produto</label>
                                 <div class="invalid-feedback">
                                     Por favor, informe o Valor do Produto.
@@ -109,6 +111,48 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button id="SalvarNovoProduto" type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal ADD CATEGORIA -->
+<div class="modal fade" id="ModalAddCategoria" tabindex="-1" aria-labelledby="ModalAddCategoria" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="ModalAddCategoria">Nova Categoria</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="post" id="FormNovaCategoria" class="needs-validation" novalidate>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="nomeCategoria" placeholder="Produto" required>
+                                <label for="nomeCategoria">Nome da Categoria</label>
+                                <div class="invalid-feedback">
+                                    Por favor, informe o Nome da Categoria.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="impostoCategoria" placeholder="Imposto" min=0 required>
+                                <label for="impostoCategoria">Imposto da Categoria</label>
+                                <div class="invalid-feedback">
+                                    Por favor, informe o Imposto encendido.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button id="SalvarNovaCategoria" type="submit" class="btn btn-primary">Salvar</button>
                 </div>
             </form>
         </div>

@@ -1,11 +1,11 @@
-export class insertDados {
-    insert(url, dados) {
+export class deleteDados {
+    delete(url, dados) {
         const options = {
             method: 'POST',
             headers: {
                 'content-type': 'application/json;charset=UTF-8',
             },
-            body: JSON.stringify(dados)
+            body: JSON.stringify({ 'id': dados })
         };
         return fetch(`http://localhost:8080/src/php/${url}.php`, options)
             .then(response => response.json())
@@ -17,4 +17,4 @@ export class insertDados {
         });
     }
 }
-//# sourceMappingURL=insertDados.js.map
+//# sourceMappingURL=deleteDados.js.map

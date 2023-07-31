@@ -1,13 +1,13 @@
-export class insertDados<T>
+export class deleteDados
 {
-    public insert(url:string,dados:T): Promise<any>
+    public delete(url:string,dados:string): Promise<boolean|string>
     {   
         const options = {
           method: 'POST',
           headers: {
             'content-type': 'application/json;charset=UTF-8',
           },
-          body: JSON.stringify(dados)
+          body: JSON.stringify({'id':dados})
         };
 
         return fetch(`http://localhost:8080/src/php/${url}.php`, options)
@@ -20,4 +20,3 @@ export class insertDados<T>
           });
     }
 }
-

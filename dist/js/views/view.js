@@ -11,7 +11,6 @@ export class View {
     }
     update(model) {
         let template = this.template(model);
-        console.log(template);
         this.elemento.innerHTML = template;
     }
 }

@@ -18,6 +18,33 @@ USE `soft_market`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `carrinho`
+--
+
+DROP TABLE IF EXISTS `carrinho`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `carrinho` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `produto_PRODUTOS` int NOT NULL,
+  `quantidade` int unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `produto_PRODUTOS_idx` (`produto_PRODUTOS`),
+  CONSTRAINT `produto_PRODUTOS` FOREIGN KEY (`produto_PRODUTOS`) REFERENCES `produtos` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `carrinho`
+--
+
+LOCK TABLES `carrinho` WRITE;
+/*!40000 ALTER TABLE `carrinho` DISABLE KEYS */;
+/*!40000 ALTER TABLE `carrinho` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `categorias`
 --
 
@@ -29,7 +56,7 @@ CREATE TABLE `categorias` (
   `categoria` varchar(100) NOT NULL,
   `imposto` float unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COMMENT='Categorias de Produtos';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3 COMMENT='Categorias de Produtos';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +65,7 @@ CREATE TABLE `categorias` (
 
 LOCK TABLES `categorias` WRITE;
 /*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
-INSERT INTO `categorias` VALUES (1,'Hardware',0.5);
+INSERT INTO `categorias` VALUES (1,'Hardware',0.5),(2,'Periféricos',0.5);
 /*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,16 +78,15 @@ DROP TABLE IF EXISTS `produtos`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `produtos` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `categoria_CATEGORIAS` int NOT NULL,
+  `categoria_CATEGORIAS` int unsigned NOT NULL,
   `produto` varchar(100) NOT NULL,
   `valor` float unsigned NOT NULL,
   `foto` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idprodutos_UNIQUE` (`id`),
   UNIQUE KEY `produto_UNIQUE` (`produto`),
-  KEY `categoria_CATEGORIAS_idx` (`categoria_CATEGORIAS`),
-  CONSTRAINT `categoria_CATEGORIAS` FOREIGN KEY (`categoria_CATEGORIAS`) REFERENCES `categorias` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COMMENT='Produtos';
+  KEY `categoria_CATEGORIAS_idx` (`categoria_CATEGORIAS`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb3 COMMENT='Produtos';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +95,7 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (1,1,'Cabo de Rede',10,NULL),(3,1,'Mouse',20,NULL),(4,1,'Teclado',89,NULL),(5,1,'Monitor',123,NULL),(6,1,'Placa Mãe',200,NULL),(7,1,'Memória RAM',300,NULL),(9,1,'Mouse Pad',10,NULL);
+INSERT INTO `produtos` VALUES (1,1,'Cabo de Rede',10,NULL),(3,1,'Mouse',20,NULL),(4,1,'Teclado',89,NULL),(5,1,'Monitor',123,NULL),(7,1,'Memória RAM',300,NULL);
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -82,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-31  6:49:27
+-- Dump completed on 2023-07-31 13:48:17

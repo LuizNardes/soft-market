@@ -14,8 +14,6 @@ export abstract class View<T> {
 
     public update(model: T): void {
         let template = this.template(model);
-        console.log(template);
-        
         this.elemento.innerHTML = template;
     }
 

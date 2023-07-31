@@ -15,52 +15,11 @@
             </div>
         </div>
         <div class="col-9">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-                <div class="col">
-                    <div class="card">
-                        <a href="<?php echo URL ?>produto"><img src="https://picsum.photos/250/200" class="card-img-top img-fluid" alt="..."></a>
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <h5 class="card-title fw-bold">R$ 999</h5><small>99</small>
-                            </div>
-                            <p class="card-text">Nome do produto</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <a href="<?php echo URL ?>produto"><img src="https://picsum.photos/250/200" class="card-img-top img-fluid" alt="..."></a>
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <h5 class="card-title fw-bold">R$ 999</h5><small>99</small>
-                            </div>
-                            <p class="card-text">Nome do produto</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <a href="<?php echo URL ?>produto"><img src="https://picsum.photos/250/200" class="card-img-top img-fluid" alt="..."></a>
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <h5 class="card-title fw-bold">R$ 999</h5><small>99</small>
-                            </div>
-                            <p class="card-text">Nome do produto</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <a href="<?php echo URL ?>produto"><img src="https://picsum.photos/250/200" class="card-img-top img-fluid" alt="..."></a>
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <h5 class="card-title fw-bold">R$ 999</h5><small>99</small>
-                            </div>
-                            <p class="card-text">Nome do produto</p>
-                        </div>
-                    </div>
-                </div>
+            <div id="ProdutosHome" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+
             </div>
         </div>
     </div>
 </div>
+
+<script src="<?php echo URL; ?>dist/js/HOME_app.js" type="module"></script>
