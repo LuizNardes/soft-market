@@ -16,12 +16,11 @@ $query = "SELECT
         ON T1.categoria_CATEGORIAS = T2.id";
 
 $resultado = $busca->select($query);
+$codigoDaVenda = rand(100000, 999999);
 
 foreach ($resultado as $row) {
 
     $IdProdutoCarrinho = $row['id'];
-
-    $codigoDaVenda = rand(100000, 999999);
     $CodigoProduto = $row['CodigoProduto'];
     $Qtd = $row['quantidade'];
     $Valor = $row['valor'];
@@ -39,11 +38,11 @@ foreach ($resultado as $row) {
     $insereNoHistorico = new MySQL();
     $insereNoHistorico->insert($query);
 
-    $query = "DELETE FROM `soft_market`.`carrinho` WHERE id = '$IdProdutoCarrinho'";
-
-    $deletaDoCarrinho = new MySQL();
-    $deletaDoCarrinho->delete($query);
-
 }
+
+$query = "DELETE FROM `soft_market`.`carrinho`";
+
+$deletaDoCarrinho = new MySQL();
+$deletaDoCarrinho->delete($query);
 
 echo json_encode(true);

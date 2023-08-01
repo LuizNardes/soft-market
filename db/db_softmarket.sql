@@ -32,7 +32,7 @@ CREATE TABLE `carrinho` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `produto_PRODUTOS_idx` (`produto_PRODUTOS`),
   CONSTRAINT `produto_PRODUTOS` FOREIGN KEY (`produto_PRODUTOS`) REFERENCES `produtos` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=185 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,10 +88,9 @@ CREATE TABLE `historico_de_vendas` (
   `subtotal_imposto` float unsigned NOT NULL,
   `data` date NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `codigo_venda_UNIQUE` (`codigo_venda`),
   KEY `produto_PRODUTOS_idx` (`produto_PRODUTOS`),
   CONSTRAINT `historico_produtos` FOREIGN KEY (`produto_PRODUTOS`) REFERENCES `produtos` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +99,7 @@ CREATE TABLE `historico_de_vendas` (
 
 LOCK TABLES `historico_de_vendas` WRITE;
 /*!40000 ALTER TABLE `historico_de_vendas` DISABLE KEYS */;
-INSERT INTO `historico_de_vendas` VALUES (5,701803,1,1,10,10,0.5,0.05,0.05,'2023-08-01'),(6,691794,7,1,300,300,0.5,1.5,1.5,'2023-08-01');
+INSERT INTO `historico_de_vendas` VALUES (11,338700,1,1,10,10,0.5,0.05,0.05,'2023-08-01'),(12,338700,3,5,20,100,0.5,0.1,0.5,'2023-08-01'),(13,338700,4,3,89,267,0.5,0.445,1.335,'2023-08-01'),(14,787045,3,5,20,100,0.5,0.1,0.5,'2023-08-01'),(15,787045,1,1,10,10,0.5,0.05,0.05,'2023-08-01');
 /*!40000 ALTER TABLE `historico_de_vendas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-01  0:37:03
+-- Dump completed on 2023-08-01 15:48:32
