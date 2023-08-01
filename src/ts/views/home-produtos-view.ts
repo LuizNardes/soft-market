@@ -15,7 +15,7 @@ export class HomeProdutosView extends View<ListaDeProdutos> {
                             </div>
                             <p class="card-text">${produto.Nome}</p>
                             <div class="d-flex justify-content-between flex-row">
-                              <div class="col-6">
+                              <div class="col-4">
                                       <select class="form-select" id="qtd-${produto.CodigoProduto}" aria-label="Quantidade">
                                           <option selected value="1">1</option>
                                           <option value="2">2</option>
@@ -28,8 +28,10 @@ export class HomeProdutosView extends View<ListaDeProdutos> {
                                           <option value="10">10</option>
                                       </select>
                               </div>
-                              <div class="col-6 d-flex  justify-content-end ">
-                                  <button class="compraProduto btn btn-primary ms-auto" data-produto="${produto.CodigoProduto}">Comprar</button>
+                              <div class="col-5">
+                                  <button class="compraProduto btn btn-primary ms-auto w-100" data-produto="${produto.CodigoProduto}">
+                                    Comprar <i class="fa-solid fa-cart-shopping"></i>
+                                  </button>
                               </div>
                             </div>
                         </div>

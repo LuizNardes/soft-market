@@ -10,7 +10,7 @@ $quantidade = $data['quantidade'];
 
 $busca = new MySQL();
 
-$query = "INSERT INTO `soft_market`.`produtos` (`categoria_CATEGORIAS`, `produto`, `valor`) VALUES ('$categoria', '$nome', '$valor');";
+$query = "INSERT INTO `soft_market`.`carrinho` (`produto_PRODUTOS`, `quantidade`) VALUES ('$codigo', '$quantidade')";
 
 $resultado = $busca->insert($query);
 

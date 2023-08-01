@@ -32,7 +32,7 @@ CREATE TABLE `carrinho` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `produto_PRODUTOS_idx` (`produto_PRODUTOS`),
   CONSTRAINT `produto_PRODUTOS` FOREIGN KEY (`produto_PRODUTOS`) REFERENCES `produtos` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,6 +67,41 @@ LOCK TABLES `categorias` WRITE;
 /*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
 INSERT INTO `categorias` VALUES (1,'Hardware',0.5),(2,'Periféricos',0.5);
 /*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `historico_de_vendas`
+--
+
+DROP TABLE IF EXISTS `historico_de_vendas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `historico_de_vendas` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `codigo_venda` int unsigned NOT NULL,
+  `produto_PRODUTOS` int NOT NULL,
+  `quantidade` int unsigned NOT NULL,
+  `valor` float unsigned NOT NULL,
+  `subtotal` float unsigned NOT NULL,
+  `imposto` float unsigned NOT NULL,
+  `valor_imposto` float unsigned NOT NULL,
+  `subtotal_imposto` float unsigned NOT NULL,
+  `data` date NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `codigo_venda_UNIQUE` (`codigo_venda`),
+  KEY `produto_PRODUTOS_idx` (`produto_PRODUTOS`),
+  CONSTRAINT `historico_produtos` FOREIGN KEY (`produto_PRODUTOS`) REFERENCES `produtos` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `historico_de_vendas`
+--
+
+LOCK TABLES `historico_de_vendas` WRITE;
+/*!40000 ALTER TABLE `historico_de_vendas` DISABLE KEYS */;
+INSERT INTO `historico_de_vendas` VALUES (5,701803,1,1,10,10,0.5,0.05,0.05,'2023-08-01'),(6,691794,7,1,300,300,0.5,1.5,1.5,'2023-08-01');
+/*!40000 ALTER TABLE `historico_de_vendas` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -108,4 +143,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-31 13:48:17
+-- Dump completed on 2023-08-01  0:37:03
