@@ -1,6 +1,7 @@
 import { Categoria } from "../models/categoria.js";
 import { ListaDeCategorias } from "../models/lista-de-categorias.js";
 import { ListaDeProdutos } from "../models/lista-de-produtos.js";
+import { NAVCARRINHO } from "../models/nav_carrinho.js";
 import { Produto } from "../models/produto.js";
 import { ImportaDados } from "../services/importaDados.js";
 import { insertDados } from "../services/insertDados.js";
@@ -19,6 +20,8 @@ export class ADM
 
     private formNovoProduto = document.getElementById('FormNovoItem') as HTMLFormElement;
     private FormNovaCategoria = document.getElementById('FormNovaCategoria') as HTMLFormElement;
+
+    private NavCarrinho = new NAVCARRINHO();
 
     constructor()
     {

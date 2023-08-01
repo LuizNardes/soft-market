@@ -1,4 +1,5 @@
 import { ListaDeProdutosHistorico } from "../models/lista-de-produto-historico.js";
+import { NAVCARRINHO } from "../models/nav_carrinho.js";
 import { ProdutoHistorico } from "../models/produto-historico.js";
 import { ImportaDados } from "../services/importaDados.js";
 import { HistoricoView } from "../views/historico-view.js";
@@ -7,6 +8,7 @@ export class HISTORICO
 {
     private ListaDeProdutosHistorico:ListaDeProdutosHistorico = new ListaDeProdutosHistorico();
     private HistoricoView:HistoricoView = new HistoricoView('#accordionPedidos');
+    private NavCarrinho = new NAVCARRINHO();
 
     constructor()
     {

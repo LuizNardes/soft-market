@@ -32,7 +32,7 @@ CREATE TABLE `carrinho` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `produto_PRODUTOS_idx` (`produto_PRODUTOS`),
   CONSTRAINT `produto_PRODUTOS` FOREIGN KEY (`produto_PRODUTOS`) REFERENCES `produtos` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=185 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=211 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +90,7 @@ CREATE TABLE `historico_de_vendas` (
   PRIMARY KEY (`id`),
   KEY `produto_PRODUTOS_idx` (`produto_PRODUTOS`),
   CONSTRAINT `historico_produtos` FOREIGN KEY (`produto_PRODUTOS`) REFERENCES `produtos` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +99,7 @@ CREATE TABLE `historico_de_vendas` (
 
 LOCK TABLES `historico_de_vendas` WRITE;
 /*!40000 ALTER TABLE `historico_de_vendas` DISABLE KEYS */;
-INSERT INTO `historico_de_vendas` VALUES (11,338700,1,1,10,10,0.5,0.05,0.05,'2023-08-01'),(12,338700,3,5,20,100,0.5,0.1,0.5,'2023-08-01'),(13,338700,4,3,89,267,0.5,0.445,1.335,'2023-08-01'),(14,787045,3,5,20,100,0.5,0.1,0.5,'2023-08-01'),(15,787045,1,1,10,10,0.5,0.05,0.05,'2023-08-01');
+INSERT INTO `historico_de_vendas` VALUES (11,338700,1,1,10,10,0.5,0.05,0.05,'2023-08-01'),(12,338700,3,5,20,100,0.5,0.1,0.5,'2023-08-01'),(13,338700,4,3,89,267,0.5,0.445,1.335,'2023-08-01'),(14,787045,3,5,20,100,0.5,0.1,0.5,'2023-08-01'),(15,787045,1,1,10,10,0.5,0.05,0.05,'2023-08-01'),(16,354911,7,1,300,300,0.5,1.5,1.5,'2023-08-01'),(17,354911,1,1,10,10,0.5,0.05,0.05,'2023-08-01'),(18,175285,3,5,20,100,0.5,0.1,0.5,'2023-08-01'),(19,175285,1,3,10,30,0.5,0.05,0.15,'2023-08-01');
 /*!40000 ALTER TABLE `historico_de_vendas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +120,7 @@ CREATE TABLE `produtos` (
   UNIQUE KEY `idprodutos_UNIQUE` (`id`),
   UNIQUE KEY `produto_UNIQUE` (`produto`),
   KEY `categoria_CATEGORIAS_idx` (`categoria_CATEGORIAS`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb3 COMMENT='Produtos';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3 COMMENT='Produtos';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,7 +129,7 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (1,1,'Cabo de Rede',10,NULL),(3,1,'Mouse',20,NULL),(4,1,'Teclado',89,NULL),(5,1,'Monitor',123,NULL),(7,1,'Memória RAM',300,NULL);
+INSERT INTO `produtos` VALUES (1,1,'Cabo de Rede',10,NULL),(3,1,'Mouse',20,NULL),(4,1,'Teclado',89,NULL),(7,1,'Memória RAM',300,NULL),(19,1,'SSD',45,NULL);
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -142,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-01 15:48:32
+-- Dump completed on 2023-08-01 19:43:58

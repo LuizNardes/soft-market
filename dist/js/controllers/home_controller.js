@@ -1,5 +1,6 @@
 import { EnviaParaCarrinho } from "../models/envia-para-carrinho.js";
 import { ListaDeProdutos } from "../models/lista-de-produtos.js";
+import { NAVCARRINHO } from "../models/nav_carrinho.js";
 import { Produto } from "../models/produto.js";
 import { ImportaDados } from "../services/importaDados.js";
 import { HomeProdutosView } from "../views/home-produtos-view.js";
@@ -8,6 +9,7 @@ export class HOME {
         this.listaDeProdutos = new ListaDeProdutos();
         this.produtosView = new HomeProdutosView('#ProdutosHome');
         this.EnviaParaCarrinho = new EnviaParaCarrinho();
+        this.NavCarrinho = new NAVCARRINHO();
         this.MontaViewDeProdutos();
     }
     MontaViewDeProdutos() {

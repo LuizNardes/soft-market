@@ -1,4 +1,5 @@
 import { ListaDeProdutosHistorico } from "../models/lista-de-produto-historico.js";
+import { NAVCARRINHO } from "../models/nav_carrinho.js";
 import { ProdutoHistorico } from "../models/produto-historico.js";
 import { ImportaDados } from "../services/importaDados.js";
 import { HistoricoView } from "../views/historico-view.js";
@@ -6,6 +7,7 @@ export class HISTORICO {
     constructor() {
         this.ListaDeProdutosHistorico = new ListaDeProdutosHistorico();
         this.HistoricoView = new HistoricoView('#accordionPedidos');
+        this.NavCarrinho = new NAVCARRINHO();
         this.MontaViewDeProdutos();
     }
     MontaViewDeProdutos() {

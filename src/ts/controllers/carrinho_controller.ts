@@ -1,4 +1,5 @@
 import { ListaDeProdutosCarrinho } from "../models/lista-de-produtos-carrinho.js";
+import { NAVCARRINHO } from "../models/nav_carrinho.js";
 import { ProdutoCarrinho } from "../models/produto-carrinho.js";
 import { deleteDados } from "../services/deleteDados.js";
 import { ImportaDados } from "../services/importaDados.js";
@@ -9,6 +10,7 @@ export class CARRNHO {
   private listaDeProdutosCarrinho:ListaDeProdutosCarrinho = new ListaDeProdutosCarrinho();
   private CarrinhoView:CarrinhoProdutosView = new CarrinhoProdutosView('#ListaProdutosCarrinho');
   private botaoFinalizaVenda:HTMLElement = document.getElementById('FinalizaCompra') as HTMLElement;
+  private NavCarrinho = new NAVCARRINHO();
 
   constructor() {
     this.MontaViewDeProdutos();
@@ -71,6 +73,7 @@ export class CARRNHO {
     const Deletador = new deleteDados();
     Deletador.delete('DeleteDoCarrinho',id);
     this.MontaViewDeProdutos();
+    this.NavCarrinho.AtualizaNavCarrinho();
   }
 
   private AlteraQTD(id:string,quantidade:string):void
@@ -78,6 +81,7 @@ export class CARRNHO {
     const atualiza = new updateDados();
     atualiza.update(quantidade,id,'carrinho','quantidade');
     this.MontaViewDeProdutos();
+    this.NavCarrinho.AtualizaNavCarrinho();
   }
 
   private FinalizaCompra()
@@ -85,7 +89,8 @@ export class CARRNHO {
     fetch(`http://localhost:8080/src/php/FinalizaVenda.php`)
     .then(res => res.json())
     .then((dados) => {
-        window.location.href = "http://localhost:8080/agradecimento";
+      this.NavCarrinho.AtualizaNavCarrinho();
+      window.location.href = "http://localhost:8080/agradecimento";
     });
   }
 

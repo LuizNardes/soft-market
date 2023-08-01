@@ -1,4 +1,5 @@
 import { insertDados } from "../services/insertDados.js";
+import { NAVCARRINHO } from "./nav_carrinho.js";
 
 export class EnviaParaCarrinho
 {
@@ -45,6 +46,7 @@ export class EnviaParaCarrinho
                 return;
             }
 
+            new NAVCARRINHO();
             botao.classList.remove('btn-primary');
             botao.classList.add('btn-success');
             botao.innerHTML = '<i class="fa-solid fa-check"></i>';

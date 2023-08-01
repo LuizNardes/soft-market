@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { Categoria } from "../models/categoria.js";
 import { ListaDeCategorias } from "../models/lista-de-categorias.js";
 import { ListaDeProdutos } from "../models/lista-de-produtos.js";
+import { NAVCARRINHO } from "../models/nav_carrinho.js";
 import { Produto } from "../models/produto.js";
 import { ImportaDados } from "../services/importaDados.js";
 import { insertDados } from "../services/insertDados.js";
@@ -25,6 +26,7 @@ export class ADM {
         this.SeletorDeCategorias = new AdmSeletorCategoriasView('#SeletorCategoriaProduto');
         this.formNovoProduto = document.getElementById('FormNovoItem');
         this.FormNovaCategoria = document.getElementById('FormNovaCategoria');
+        this.NavCarrinho = new NAVCARRINHO();
         this.MontaViewDeProdutos();
         this.MontaViewDeCategorias();
         this.formNovoProduto.addEventListener('submit', this.SalvarNovoProduto.bind(this));

@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { insertDados } from "../services/insertDados.js";
+import { NAVCARRINHO } from "./nav_carrinho.js";
 export class EnviaParaCarrinho {
     AddEscutador() {
         const iconesDelete = document.querySelectorAll(`.compraProduto`);
@@ -37,6 +38,7 @@ export class EnviaParaCarrinho {
                     botao.innerHTML = 'Erro <i class="fa-solid fa-circle-exclamation"></i>';
                     return;
                 }
+                new NAVCARRINHO();
                 botao.classList.remove('btn-primary');
                 botao.classList.add('btn-success');
                 botao.innerHTML = '<i class="fa-solid fa-check"></i>';

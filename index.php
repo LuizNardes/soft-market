@@ -8,7 +8,7 @@ include_once './src/config/config.php';
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>LOGO</title>
+    <title>SoftMarket</title>
     <link rel="stylesheet" href="<?php echo URL?>dist/css/styles.css" />
     <script src="https://kit.fontawesome.com/aaca72973a.js" crossorigin="anonymous"></script>
 </head>
